@@ -35,8 +35,7 @@ export function getSortedPostsData() {
 }
 
 //API
-/*
-export async function getSortedPostsData() {
+/*export async function getSortedPostsData() {
   // Instead of the file system,
   // fetch post data from an external API endpoint
   const res = await fetch('..');
@@ -44,8 +43,7 @@ export async function getSortedPostsData() {
 }*/
 
 //DB
-/*
-import someDatabaseSDK from 'someDatabaseSDK'
+/*import someDatabaseSDK from 'someDatabaseSDK'
 
 const databaseClient = someDatabaseSDK.createClient(...)
 
@@ -53,4 +51,13 @@ export async function getSortedPostsData() {
   // Instead of the file system,
   // fetch post data from a database
   return databaseClient.query('SELECT posts...')
+}*/
+
+//SSR
+/*export async function getServerSideProps(context) {
+  return {
+    props: {
+      // props for your component
+    },
+  };
 }*/
