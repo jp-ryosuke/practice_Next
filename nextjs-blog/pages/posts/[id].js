@@ -13,6 +13,8 @@ export default function Post({ postData }) {
         {postData.id}
         <br />
         {postData.date}
+        <br />
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </Layout>
     );
   }
@@ -34,11 +36,13 @@ export async function getStaticPaths() {
     };
   }
 
-export async function getStaticProps({ params }) {
-  const postData = getPostData(params.id);
-  return {
-    props: {
-      postData,
-    },
-  };
-}
+  export async function getStaticProps({ params }) {
+    // Add the "await" keyword like this:
+    const postData = await getPostData(params.id);
+  
+    return {
+      props: {
+        postData,
+      },
+    };
+  }
