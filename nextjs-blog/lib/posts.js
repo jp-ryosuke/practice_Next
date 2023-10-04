@@ -24,6 +24,7 @@ export function getSortedPostsData() {
       ...matterResult.data,
     };
   });
+
   // Sort posts by date
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
@@ -31,6 +32,31 @@ export function getSortedPostsData() {
     } else {
       return -1;
     }
+  });
+
+}
+export function getAllPostIds() {
+  const fileNames = fs.readdirSync(postsDirectory);
+
+  // Returns an array that looks like this:
+  // [
+  //   {
+  //     params: {
+  //       id: 'ssg-ssr'
+  //     }
+  //   },
+  //   {
+  //     params: {
+  //       id: 'pre-rendering'
+  //     }
+  //   }
+  // ]
+  return fileNames.map((fileName) => {
+    return {
+      params: {
+        id: fileName.replace(/\.md$/, ''),
+      },
+    };
   });
 }
 
