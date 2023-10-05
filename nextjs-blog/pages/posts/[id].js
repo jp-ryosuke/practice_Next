@@ -1,6 +1,7 @@
 import Layout from '../../components/layout';
 import Head from 'next/head';
 import { getAllPostIds, getPostData } from '../../lib/posts';
+import Date from '../../components/date';
 
 /*export default function Post() {
   return <Layout>...</Layout>;
@@ -9,16 +10,15 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 export default function Post({ postData }) {
   return (
     <Layout>
-      {/* Add this <Head> tag */}
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
+      {/* Keep the existing code here */}
+
+      {/* Replace {postData.date} with this */}
+      <Date dateString={postData.date} />
 
       {/* Keep the existing code here */}
     </Layout>
   );
 }
-
 /*import { getAllPostIds } from '../../lib/posts';
 export async function getStaticPaths() {
   const paths = getAllPostIds();
